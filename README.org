@@ -1,25 +1,78 @@
 #+TITLE: mastodon.social layer
 
 * Table of Contents                                        :TOC_4_gh:noexport:
- - [[#description][Description]]
- - [[#install][Install]]
- - [[#keybindings][Keybindings]]
+- [[#description][Description]]
+- [[#install][Install]]
+- [[#usage][Usage]]
+  - [[#instance][Instance]]
+  - [[#keybindings][Keybindings]]
+    - [[#activation][Activation]]
+    - [[#timelines][Timelines]]
+    - [[#toots][Toots]]
+    - [[#quit][Quit]]
 
 * Description
-This layer adds the ability to connect to a Mastodon Social Instance. It uses
+This layer adds the ability to connect to a Mastodon Social Instances. It uses
 https://github.com/jdenen/mastodon.el to do this
 
 * Install
 To use this configuration layer, do the following:
 
-1. git clone https://github.com/ksonney/spacemacs-mastodon.git ~/.emacs.d/private/mastodon
-2. Add =mastodon= to the =dotspacemacs-configuration-layers= in
-=~/.spacemacs=
-3. Restart spacemacs
+1. Clone mastodon layer repository
 
-On the first invocation, you will be prompted for the instance, username, and
+#+BEGIN_SRC emacs-lisp
+
+ git clone https://github.com/ksonney/spacemacs-mastodon.git ~/.emacs.d/private/mastodon
+
+#+END_SRC
+
+2. Add =mastodon= to your =.spacemacs= or =~/.spacemacs.d/init.el=
+3. Restart spacemacs (or just =SPC f e R=).
+
+On the first invocation, you will be prompted for  username and
 password for connecting to mastodon.
 
-* Keybindings
-SPC-a-m-m Load Mastodon buffer with your timeline (mastodon)
-SPC-a-m-t Post a new toot to your Mastodon account (mastodon-toot)
+* Usage
+** Instance
+
+Set =mastodon-instance-url= in your =.spacemacs= or =~/.spacemacs.d/init.el= or =customize=. Defaults to the [[https://mastodon.social][flagship]].
+
+#+BEGIN_SRC emacs-lisp
+    (setq mastodon-instance-url "https://my.instance.url")
+#+END_SRC
+
+** Keybindings
+*** Activation
+
+    | Key Binding | Description    |
+    |-------------+----------------|
+    | ~SPC a m m~ | Start Mastodon |
+
+*** Timelines
+
+    | Key Binding | Description         |
+    |-------------+---------------------|
+    | ~SPC a m H~ | Home timeline       |
+    | ~SPC a m L~ | Local timeline      |
+    | ~SPC a m T~ | Tag timeline        |
+    | ~SPC a m F~ | Federation timeline |
+
+*** Toots
+
+    | Key Binding | Description |
+    |-------------+-------------|
+    | ~SPC a m b~ | Boost       |
+    | ~SPC a m f~ | Favorite    |
+    | ~SPC a m j~ | Next        |
+    | ~SPC a m k~ | Previous    |
+    | ~SPC a m n~ | Toot        |
+    | ~SPC a m r~ | Reply       |
+    | ~SPC a m t~ | Thread      |
+    | ~SPC a m u~ | Update      |
+
+*** Quit
+
+    | Key Binding | Description             |
+    |-------------+-------------------------|
+    | ~SPC a m q~ | Quit. Leave window open |
+    | ~SPC a m Q~ | Quit. Kill window       |
