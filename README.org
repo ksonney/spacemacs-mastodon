@@ -1,9 +1,14 @@
 #+TITLE: mastodon.social layer
 
 * Table of Contents                                        :TOC_4_gh:noexport:
- - [[#description][Description]]
- - [[#install][Install]]
- - [[#keybindings][Keybindings]]
+- [[#description][Description]]
+- [[#install][Install]]
+- [[#keybindings][Keybindings]]
+  - [[#leader][Leader]]
+    - [[#activation][Activation]]
+    - [[#timelines][Timelines]]
+    - [[#toots][Toots]]
+    - [[#quit][Quit]]
 
 * Description
 This layer adds the ability to connect to a Mastodon Social Instance. It uses
@@ -23,3 +28,38 @@ password for connecting to mastodon.
 * Keybindings
 SPC-a-m-m Load Mastodon buffer with your timeline (mastodon)
 SPC-a-m-t Post a new toot to your Mastodon account (mastodon-toot)
+** Leader
+*** Activation
+
+    | Key Binding | Description    |
+    |-------------+----------------|
+    | ~SPC a m m~ | Start Mastodon |
+
+*** Timelines
+
+    | Key Binding | Description         |
+    |-------------+---------------------|
+    | ~SPC a m H~ | Home timeline       |
+    | ~SPC a m L~ | Local timeline      |
+    | ~SPC a m T~ | Tag timeline        |
+    | ~SPC a m F~ | Federation timeline |
+
+*** Toots
+
+    | Key Binding | Description |
+    |-------------+-------------|
+    | ~SPC a m b~ | Boost       |
+    | ~SPC a m f~ | Favorite    |
+    | ~SPC a m j~ | Next        |
+    | ~SPC a m k~ | Previous    |
+    | ~SPC a m n~ | Toot        |
+    | ~SPC a m r~ | Reply       |
+    | ~SPC a m t~ | Thread      |
+    | ~SPC a m u~ | Update      |
+
+*** Quit
+
+    | Key Binding | Description             |
+    |-------------+-------------------------|
+    | ~SPC a m q~ | Quit. Leave window open |
+    | ~SPC a m Q~ | Quit. Kill window       |
